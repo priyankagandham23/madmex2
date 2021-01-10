@@ -22,6 +22,58 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <title>Hello, world!</title>
+<style>
+html,body {
+  height: 100%;
+  color: #333;
+}
+
+section {
+	padding-top: 70px;  
+    padding-bottom: 50px; 
+    min-height: 100vh;
+}
+ 
+.padding-bottom-0 {
+	padding-bottom:0;
+}
+  
+#section1 {
+	
+}
+  
+#section2 {
+    background-color: #f0f0f0;
+}
+  
+#section3 {
+	
+}
+
+#section4 {
+	background-color: #f0f0f0;
+}
+
+footer {
+	background-color:#494949;
+    color:#ddd;
+    min-height:100px;
+    padding-top:20px;
+    padding-bottom:40px;
+}
+
+footer .nav>li>a {
+    padding:3px;
+    color:#ccc;
+}
+
+footer .nav>li>a:hover {
+    background-color:transparent;
+	color:#fff;
+}
+
+
+</style>
   </head>
   <body>
    "<nav class=\"navbar navbar-default navbar-fixed-top\" role=\"navigation\">\n 
@@ -77,6 +129,28 @@
 </section>\n\n<section id=\"section2\">\n  <div class=\"container\">\n  <div class=\"row\">\n  \t<div class=\"col-sm-8 col-sm-offset-2 text-center\">\n        <h1>Section 2</h1>\n        <br>\n\t\t<p class=\"lead\">Bootstrap is a free collection of tools for creating websites and web applications. It contains HTML and CSS-based design templates for typography, forms, buttons, navigation and other interface components, as well as optional JavaScript components.</p>\n        \n    </div>\n  </div>\n  </div><!--/container-->\n</section>\n\n<section id=\"section3\">\n  <div class=\"container\">\t\n  \t<h1 class=\"text-center\">Section 3</h1>\n    <div class=\"row\">\n      <div class=\"col-sm-6 col-sm-offset-3\">\n        <p class=\"text-center lead\">Vertical scrolling has become a popular and lasting trend in Web design. The question becomes, is it here to stay?</p>\n        <div class=\"row\">\n          <div class=\"col-xs-6\">Some brand-tacular designs even have home page content that is taller that 12,000 pixels. That's a lotta content.</div>\n          <div class=\"col-xs-6 text-right\">Anyhoo, this is just some random blurb of text, and Bootply.com is a playground and code editor for Bootstrap.</div>\n        </div> \n      </div>\n   \t</div>\n  </div><!--/container-->\n</section>\n\n<section id=\"section4\">\n  <div class=\"container\">\n\t<h2 class=\"text-center\">Section 4</h2>\n    <div class=\"row\">\n      <div class=\"col-sm-8 col-sm-offset-2\">\n      <img src=\"//placehold.it/1024x700\" class=\"img-responsive center-block\" title=\"centered image\">\n       <p class=\"text-center\">Images will scale down proportionately as browser width narrows.</p>\n      </div>\n    </div>\n  </div><!--/container-->\n</section>\n\n<footer id=\"footer\">\n  <div class=\"container\">\n    <div class=\"row\">    \n      <div class=\"col-xs-6 col-sm-6 col-md-3 column\">          \n          <h4>Information</h4>\n          <ul class=\"nav\">\n            <li><a href=\"#\">Products</a></li>\n            <li><a href=\"#\">Services</a></li>\n            <li><a href=\"#\">Benefits</a></li>\n            <li><a href=\"#\">Developers</a></li>\n          </ul> \n        </div>\n      <div class=\"col-xs-6 col-md-3 column\">          \n          <h4>Follow Us</h4>\n          <ul class=\"nav\">\n            <li><a href=\"#\">Twitter</a></li>\n            <li><a href=\"#\">Facebook</a></li>\n            <li><a href=\"#\">Google+</a></li>\n            <li><a href=\"#\">Pinterest</a></li>\n          </ul> \n      </div>\n      <div class=\"col-xs-6 col-md-3 column\">          \n          <h4>Contact Us</h4>\n          <ul class=\"nav\">\n            <li><a href=\"#\">Email</a></li>\n            <li><a href=\"#\">Headquarters</a></li>\n            <li><a href=\"#\">Management</a></li>\n            <li><a href=\"#\">Support</a></li>\n          </ul> \n      </div>\n      <div class=\"col-xs-6 col-md-3 column\">          \n          <h4>Customer Service</h4>\n          <ul class=\"nav\">\n            <li><a href=\"#\">About Us</a></li>\n            <li><a href=\"#\">Delivery Information</a></li>\n            <li><a href=\"#\">Privacy Policy</a></li>\n            <li><a href=\"#\">Terms &amp; Conditions</a></li>\n          </ul> \n      </div>\n    </div><!--/row-->\n  </div>\n</footer>" 
 
 
+<script>
+/* animate smooth scrolling sections */
+$("nav ul li a[href^='#']").on('click', function(e) {
+
+   // prevent default anchor click behavior
+   e.preventDefault();
+
+   // store hash
+   var hash = this.hash;
+
+   // animate
+   $('html, body').animate({
+       scrollTop: $(hash).offset().top
+     }, 700, function(){
+
+       // when done, add hash to url
+       // (default click behaviour)
+       window.location.hash = hash;
+     });
+
+});
+</script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
